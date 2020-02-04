@@ -59,16 +59,16 @@ app.get("/stats", (req, res) => {
             res.json(err);
         });
 });
-//update this when you're not tired :)
-// app.get("/populated", (req, res) => {
-//     db.Library.find({})
-//         .populate("books")
-//         .then(dbLibrary => {
-//             res.json(dbLibrary);
-//         })
-//         .catch(err => {
-//             res.json(err);
-//         });
+
+app.get("/index", (req, res) => {
+    db.workout.find({})
+        // .populate("books")
+        .then(dbworkout => {
+            res.json(dbworkout);
+        })
+        .catch(err => {
+            res.json(err);
+        });
 
 app.listen(PORT, () => {
     console.log(`App running on port ${PORT}!`);
